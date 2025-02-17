@@ -1,25 +1,25 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
-import { add } from './commands/add.js';
 import { init } from './commands/init.js';
+import { add } from './commands/add.js';
 
 const program = new Command();
 
 program
-  .name('mojoui')
-  .description('CLI for adding MojoUI components to your project')
+  .name('clioui')
+  .description('ClioUI CLI - React Component Library Builder')
   .version('0.1.0');
 
 program
   .command('init')
-  .description('Initialize MojoUI in your project')
+  .description('Initialize a new MojoUI project')
+  .option('-y, --yes', 'Skip confirmation prompt')
   .action(init);
 
 program
-  .command('add')
+  .command('add <component>')
   .description('Add a component to your project')
-  .argument('<component>', 'component to add')
-  .option('-y, --yes', 'Skip confirmation prompt', false)
-  .action(add);
+  .option('-y, --yes', 'Skip confirmation prompt')
+  .action((component, options) => add(component, options));
 
 program.parse();
