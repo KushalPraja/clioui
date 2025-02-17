@@ -10,6 +10,7 @@ export const addComponent = (componentName: string) => {
     copyFileSync(componentPath, targetPath);
     console.log(`Added ${componentName} to your project`);
   } catch (error) {
-    console.error(`Failed to add component: ${error.message}`);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    console.error(`Failed to add component: ${errorMessage}`);
   }
 };
