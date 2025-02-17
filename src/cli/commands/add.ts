@@ -1,4 +1,4 @@
-import { copyFileSync, readFileSync } from 'fs';
+import { copyFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { getProjectRoot } from '../utils/project.js';
@@ -11,7 +11,7 @@ const REGISTRY: Record<string, string> = {
   // Add more components here
 };
 
-export async function add(name: string, options: { yes: boolean }) {
+export async function add(name: string) {
   const root = getProjectRoot();
   
   if (!REGISTRY[name]) {
@@ -24,7 +24,6 @@ export async function add(name: string, options: { yes: boolean }) {
   const targetPath = join(root, REGISTRY[name]);
 
   try {
-    const content = readFileSync(componentPath, 'utf-8');
     copyFileSync(componentPath, targetPath);
     console.log(`✓ Added ${name} component`);
     console.log(`  -> ${targetPath}`);

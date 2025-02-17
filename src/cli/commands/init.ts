@@ -1,10 +1,7 @@
-import { copyFileSync, mkdirSync, writeFileSync } from 'fs';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { mkdirSync, writeFileSync } from 'fs';
+import { join } from 'path';
 import { getProjectRoot } from '../utils/project.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 export async function init() {
   const root = getProjectRoot();
