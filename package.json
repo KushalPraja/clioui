@@ -6,10 +6,11 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "tsc -w",
-    "build": "tsc",
-    "lint": "eslint src/**/*.ts*",
-    "preview": "vite preview"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "lint": "eslint src/**/*.ts*"
   },
   "dependencies": {
     "clsx": "^2.0.0",
