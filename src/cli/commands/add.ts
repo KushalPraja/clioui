@@ -8,7 +8,11 @@ const __dirname = dirname(__filename);
 
 const REGISTRY: Record<string, string> = {
   button: 'components/ui/button.tsx',
-  // Add more components here
+  dialog: 'components/ui/dialog.tsx',
+  'dropdown-menu': 'components/ui/dropdown-menu.tsx',
+  select: 'components/ui/select.tsx',
+  tabs: 'components/ui/tabs.tsx',
+  tooltip: 'components/ui/tooltip.tsx',
 };
 
 export async function add(name: string) {
