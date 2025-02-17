@@ -1,0 +1,11 @@
+.git
+.github
+node_modules
+src
+example
+tests
+.eslintrc
+.prettierrc
+tsconfig.json
+tsconfig.cli.json
+vite.config.ts

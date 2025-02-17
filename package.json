@@ -1,21 +1,41 @@
 {
-  "name": "mojoui",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@yourscope/mojoui",
+  "private": false,
+  "version": "0.1.0",
+  "description": "A React UI component library built with Radix UI and Tailwind",
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/mojoui.git"
+  },
+  "keywords": [
+    "react",
+    "ui",
+    "components",
+    "radix-ui",
+    "tailwind"
+  ],
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
     "mojoui": "./dist/cli/index.js"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm run clean && npm run build:lib && npm run build:cli",
     "preview": "vite preview",
     "test": "vitest",
     "lint": "eslint src/**/*.ts*",
+    "clean": "rimraf dist",
+    "build:lib": "tsc -p tsconfig.json",
     "build:cli": "tsc -p tsconfig.cli.json && shx chmod +x ./dist/cli/index.js",
-    "prepublishOnly": "npm run build && npm run build:cli"
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.6",
@@ -30,6 +50,11 @@
     "react-dom": "^19.0.0",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "^3.3.0"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0",
+    "tailwindcss": "^3.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
