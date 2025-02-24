@@ -1,4 +1,4 @@
-# MojoUI
+# CLIOUI
 
 A React UI component library built with Radix UI and Tailwind CSS.
 
