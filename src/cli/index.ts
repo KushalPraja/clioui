@@ -2,6 +2,7 @@
 import { Command } from 'commander';
 import { init } from './commands/init.js';
 import { add } from './commands/add.js';
+import { organize } from './commands/organize.js';
 
 const program = new Command();
 
@@ -12,7 +13,7 @@ program
 
 program
   .command('init')
-  .description('Initialize a new MojoUI project')
+  .description('Initialize a new ClioUI project')
   .option('-y, --yes', 'Skip confirmation prompt')
   .action(init);
 
@@ -21,5 +22,11 @@ program
   .description('Add a component to your project')
   .option('-y, --yes', 'Skip confirmation prompt')
   .action((component, options) => add(component, options));
+
+program
+  .command('organize <source>')
+  .description('Organize assets from source directory into appropriate folders')
+  .option('-d, --dest <path>', 'Target directory for organized assets')
+  .action((source, options) => organize(source, options));
 
 program.parse();
