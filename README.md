@@ -38,6 +38,7 @@ export default function App() {
     </Button>
   )
 }
+
 ```
 
 ## Available Components
@@ -57,6 +58,10 @@ Add components to your project:
 npx mojoui add button
 ```
 
+## Author ##
+
+This libary was made by Kushal Prajapti. It is open-source
+and it free to change/edit.
 ## License
 
 MIT
