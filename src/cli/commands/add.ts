@@ -27,6 +27,22 @@ const COMPONENTS = {
     files: ['tooltip.tsx', 'tooltip.stories.tsx', 'tooltip.md'],
     dependencies: ['@radix-ui/react-tooltip'],
   },
+  card: {
+    files: ['card.tsx', 'card.stories.tsx', 'card.md'],
+    dependencies: ['clsx', 'tailwind-merge'],
+  },
+  accordion: {
+    files: ['accordion.tsx', 'accordion.stories.tsx', 'accordion.md'],
+    dependencies: ['@radix-ui/react-accordion'],
+  },
+  alert: {
+    files: ['alert.tsx', 'alert.stories.tsx', 'alert.md'],
+    dependencies: ['clsx', 'tailwind-merge'],
+  },
+  toggle: {
+    files: ['toggle.tsx', 'toggle.stories.tsx', 'toggle.md'],
+    dependencies: ['@radix-ui/react-toggle'],
+  },
 } as const;
 
 export async function add(name: string, options: { yes?: boolean }) {
